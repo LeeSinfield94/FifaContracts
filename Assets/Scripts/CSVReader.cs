@@ -27,8 +27,8 @@ public class CSVReader : MonoBehaviour
         for(int i = 1; i <= _CSVData.Length - 1; i++)
         {
             string[] dataValues = _CSVData[i].Split(',');
-            Rules.instance.AddRules(dataValues[0], dataValues[1]);
+            Rules.Instance.AddRules(dataValues[0], dataValues[1]);
         }
-        Rules.instance.CSVRead = true;
+        Rules.Instance.CSVRead = true;
     }
 }

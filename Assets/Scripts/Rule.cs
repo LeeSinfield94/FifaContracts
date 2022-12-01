@@ -18,4 +18,10 @@ public class Rule : MonoBehaviour
     {
         _punishmentText.text = punishment;
     }
+
+    public void RuleSelected()
+    {
+        Contract.Instance.AddRuleToContract(_ruleText.text, _punishmentText.text);
+        gameObject.SetActive(false);
+    }
 }

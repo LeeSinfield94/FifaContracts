@@ -15,12 +15,12 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator WaitForRulesDictionaryToBePopulated()
     {
-        yield return new WaitUntil(() => Rules.instance.CSVRead);
+        yield return new WaitUntil(() => Rules.Instance.CSVRead);
         PopulateRules();
     }
     public void PopulateRules()
     {
-        foreach(KeyValuePair<string, string> rule in Rules.instance._Rules)
+        foreach(KeyValuePair<string, string> rule in Rules.Instance._Rules)
         {
             GameObject go = Instantiate(_rulesPrefab, _parent);
             go.GetComponent<Rule>().SetRule(rule.Key);

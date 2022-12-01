@@ -17,16 +17,15 @@ public class Rules : MonoBehaviour
         get { return _CSVRead; }
         set { _CSVRead = value; }
     }
-    public static Rules instance;
+    public static Rules Instance;
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
     public void AddRules(string rule, string punishment)
     {
         _rules.Add(rule, punishment);
-        PrintAllRules();
     }
 
     public void UpdateRuleDrinkAmount(string key, string newPunishment)
@@ -36,12 +35,6 @@ public class Rules : MonoBehaviour
             _rules[key] = newPunishment;
         }
     }
-    public void PrintAllRules()
-    {
-        foreach(KeyValuePair<string, string> rule in _rules)
-        {
-            print(rule.Key + " " + rule.Value);
-        }
-    }
+
 
 }
