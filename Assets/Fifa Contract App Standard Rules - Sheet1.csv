@@ -1,0 +1,38 @@
+Rule,Punishments
+Score a goal,1
+Concede a goal,3
+More than 5 throwins,10
+Red Card,12
+Yellow Card ,4
+5 shots on Target ,2
+10 shots on Target ,5
+15 shots on Target ,6
+Offside ,7
+Possession under 50%,9
+Possession under 45%,10
+Possession under 40%,20
+5 Corners ,4
+10 Corners ,3
+15 Corners ,2
+Score a freekick ,1
+Score a header ,4
+Score with Goalkeeper ,5
+5 tackles ,6
+10 tackles ,67
+15 tackles,7
+2 or more cards ,8
+5 or more cards ,do a shot
+5 or more rules ,665
+10 or more rules ,6365
+score a hatrick ,433
+2x scored hatricks,132
+scored a pen,43
+Going into extra time ,7
+Going into Golden Goal ,7
+Lost in Extra time ,8
+No swearing ,9
+No raging ,0
+Video apologies to Parents/Friends/Girlfriends/Wifes,0
+Shitmix ,3
+conceding within 5 mins,3
+Score with Defender ,3
