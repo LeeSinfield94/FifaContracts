@@ -22,7 +22,6 @@ public class CSVReader : MonoBehaviour
 
     public void ReadCSV()
     {
-
         _CSVData = textAssetData.text.Split(new string[] { "\n" }, StringSplitOptions.None);
         for(int i = 1; i <= _CSVData.Length - 1; i++)
         {
