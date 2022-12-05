@@ -36,5 +36,6 @@ public class Contract : MonoBehaviour
     {
         UIManager.Instance.ClearCurrentContractList();
         UIManager.Instance.PopulateRules(_currentContractRules, false);
+        SaveLoad.SaveCurrentContract("/NewContract.csv", _currentContractRules);
     }
 }

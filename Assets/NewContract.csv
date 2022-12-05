@@ -1,0 +1,10 @@
+rule, punishment
+Score a goal, 1
+Concede a goal, 3
+More than 5 throwins, 10
+Red Card, 12
+Yellow Card , 4
+5 shots on Target , 2
+10 shots on Target , 5
+15 shots on Target , 6
+Offside , 7
