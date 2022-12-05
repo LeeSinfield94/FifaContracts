@@ -15,9 +15,15 @@ public class Contract : MonoBehaviour
 
     public void AddRuleToContract(string key, string value)
     {
-        if(_currentContractRules.ContainsKey(key))
+        if(!_currentContractRules.ContainsKey(key))
         {
             _currentContractRules.Add(key, value);
         }
+    }
+
+    public void OpenContract()
+    {
+        UIManager.Instance.ClearCurrentContractList();
+        UIManager.Instance.PopulateRules(_currentContractRules, false);
     }
 }

@@ -8,6 +8,17 @@ public class Rule : MonoBehaviour
 {
     [SerializeField] TMP_Text _ruleText;
     [SerializeField] TMP_Text _punishmentText;
+    [SerializeField] Button _button;
+
+    bool buttonOn;
+    public bool ButtonOn
+    {
+        set
+        {
+            buttonOn = value;
+            _button.gameObject.SetActive(buttonOn);
+        }
+    }
 
     public void SetRule(string rule)
     {
