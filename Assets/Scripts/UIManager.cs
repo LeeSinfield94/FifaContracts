@@ -53,8 +53,10 @@ public class UIManager : MonoBehaviour
     }
 
 
+
     public void LoadAllContracts()
     {
+        ClearContractsList();
         string[] contracts = SaveLoad.LoadContracts("Assets/Contracts");
         Transform contractsContent = _contents[2];
         foreach (string contract in contracts)
@@ -79,6 +81,13 @@ public class UIManager : MonoBehaviour
         for(int i = 1; i <= _contents[1].childCount - 1; i++)
         {
             Destroy(_contents[1].GetChild(i).gameObject);
+        }
+    }
+    public void ClearContractsList()
+    {
+        for (int i = 0; i <= _contents[2].childCount - 1; i++)
+        {
+            Destroy(_contents[2].GetChild(i).gameObject);
         }
     }
 }

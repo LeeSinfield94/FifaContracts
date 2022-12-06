@@ -17,12 +17,14 @@ public class Rules : MonoBehaviour
         get { return _CSVRead; }
         set { _CSVRead = value; }
     }
+
     public static Rules Instance;
 
     private void Awake()
     {
         Instance = this;
     }
+
     public void AddRules(string rule, string punishment)
     {
         _rules.Add(rule, punishment);
@@ -35,6 +37,4 @@ public class Rules : MonoBehaviour
             _rules[key] = newPunishment;
         }
     }
-
-
 }
