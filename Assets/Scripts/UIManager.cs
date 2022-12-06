@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject _rulesPrefab;
+    [SerializeField] GameObject _contractPrefab;
     [SerializeField] Transform[] _contents;
     bool isContractPanel = false;
 
@@ -39,10 +43,37 @@ public class UIManager : MonoBehaviour
         }
         if(isContractPanel)
         {
-            //TODO Add Signing Section.
+            AddSigningSection();
         }
     }
     
+    public void AddSigningSection()
+    {
+
+    }
+
+
+    public void LoadAllContracts()
+    {
+        string[] contracts = SaveLoad.LoadContracts("Assets/Contracts");
+        Transform contractsContent = _contents[2];
+        foreach (string contract in contracts)
+        {
+            string[] newContract = contract.Split(new string[] {"Assets/Contracts", "/", "." }, StringSplitOptions.None);
+            string newstring = newContract[1].Remove(0, 1);
+            GameObject go = Instantiate(_contractPrefab, contractsContent);
+            go.GetComponentInChildren<TMP_Text>().text = newstring;
+            go.GetComponentInChildren<Button>().onClick.AddListener(delegate { LoadContract(newstring); });
+        }
+    }
+
+    public void LoadContract(string contractName)
+    {
+        SaveLoad.LoadContract(contractName);
+        print(contractName);
+    }
+
+
     public void ClearCurrentContractList()
     {
         for(int i = 1; i <= _contents[1].childCount - 1; i++)

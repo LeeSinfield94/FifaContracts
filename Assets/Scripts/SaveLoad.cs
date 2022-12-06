@@ -18,10 +18,21 @@ public class SaveLoad : MonoBehaviour
         tw.Close();
     }
 
+    /// <summary>
+    /// Loads all contracts in given path
+    /// </summary>
+    /// <param name="filePath">Parameter value to pass.</param>
+    public static string[] LoadContracts(string filePath)
+    {
+        return Directory.GetFiles(filePath, "*.csv", SearchOption.AllDirectories);
+    }
+
+
     public static void LoadContract(string saveName)
     {
-        StreamReader sr = new StreamReader(Application.dataPath + saveName);
+        StreamReader sr = new StreamReader(Application.dataPath + "/Contracts/" + saveName + ".csv");
         string[] newString = sr.ReadToEnd().Split(new string[] { "\n" }, StringSplitOptions.None);
+        Contract.Instance.ClearCurrentContractRules();
         for (int i = 1; i <= newString.Length - 1; i++)
         {
             string[] dataValues = newString[i].Split(',');
