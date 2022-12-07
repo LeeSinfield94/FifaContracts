@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 20
+    m_Top: 60
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 0
@@ -800,10 +800,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7372418153399115993}
     m_Modifications:
-    - target: {fileID: 7191234659616028490, guid: c586e413185230d4897e236fd07ba883, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8105646352849025844, guid: c586e413185230d4897e236fd07ba883, type: 3}
       propertyPath: m_Name
       value: Rule
@@ -838,7 +834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8306211060608223582, guid: c586e413185230d4897e236fd07ba883, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 903.4013
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8306211060608223582, guid: c586e413185230d4897e236fd07ba883, type: 3}
       propertyPath: m_SizeDelta.y

@@ -8,13 +8,14 @@ public class SaveLoad : MonoBehaviour
 {
     public static void SaveCurrentContract(string saveName, Dictionary<string, string> rules)
     {
-        StreamWriter tw = new StreamWriter(Application.dataPath + "/Resources/Contracts/" + saveName, false);
-        tw.WriteLine("rule, punishment");
+        FileStream file = new FileStream(Application.persistentDataPath + "/Resources/Contracts/" + saveName, FileMode.Create, FileAccess.Write);
+        StreamWriter sw = new StreamWriter(file);
+        sw.WriteLine("rule, punishment");
         foreach (KeyValuePair<string, string> rule in rules)
         {
-            tw.WriteLine(rule.Key + ", " + rule.Value);
+            sw.WriteLine(rule.Key + ", " + rule.Value);
         }
-        tw.Close();
+        sw.Close();
     }
 
     /// <summary>
