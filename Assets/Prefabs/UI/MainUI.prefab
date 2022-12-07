@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rulesPrefab: {fileID: 8105646352849025844, guid: c586e413185230d4897e236fd07ba883, type: 3}
   _contractPrefab: {fileID: 4012757536581283116, guid: a53c4433bda835f449dc34d8faecce5a, type: 3}
+  _saveButton: {fileID: 4012757536581283116, guid: d2ea42732dee88a4c96090e082b5027b, type: 3}
   _contents:
   - {fileID: 3216693285550689955}
   - {fileID: 2382382648245924031}

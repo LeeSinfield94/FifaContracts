@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject _rulesPrefab;
     [SerializeField] GameObject _contractPrefab;
+    [SerializeField] GameObject _saveButton;
     [SerializeField] Transform[] _contents;
     bool isContractPanel = false;
 
@@ -43,29 +44,33 @@ public class UIManager : MonoBehaviour
         }
         if(isContractPanel)
         {
-            AddSigningSection();
+            SpawnSaveButton(currentContent);
         }
     }
     
     public void AddSigningSection()
     {
-
+        
     }
 
-
+    public void SpawnSaveButton(Transform content)
+    {
+        GameObject go = Instantiate(_saveButton, content);
+        go.GetComponentInChildren<Button>().onClick.AddListener(delegate { Contract.Instance.SaveContract(go.GetComponentInChildren<TMP_InputField>().text); });
+    }
 
     public void LoadAllContracts()
     {
         ClearContractsList();
-        string[] contracts = SaveLoad.LoadContracts("Assets/Contracts");
+        TextAsset[] contracts = SaveLoad.LoadContracts("Contracts");
         Transform contractsContent = _contents[2];
-        foreach (string contract in contracts)
+        foreach (TextAsset contract in contracts)
         {
-            string[] newContract = contract.Split(new string[] {"Assets/Contracts", "/", "." }, StringSplitOptions.None);
-            string newstring = newContract[1].Remove(0, 1);
+            string[] newContract = contract.name.Split(new string[] {"Assets/Contracts", "/", "." }, StringSplitOptions.None);
+            //string newstring = newContract[1].Remove(0, 1);
             GameObject go = Instantiate(_contractPrefab, contractsContent);
-            go.GetComponentInChildren<TMP_Text>().text = newstring;
-            go.GetComponentInChildren<Button>().onClick.AddListener(delegate { LoadContract(newstring); });
+            go.GetComponentInChildren<TMP_Text>().text = newContract[0];
+            go.GetComponentInChildren<Button>().onClick.AddListener(delegate { LoadContract(newContract[0]); });
         }
     }
 
